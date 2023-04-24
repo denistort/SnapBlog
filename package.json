@@ -8,7 +8,13 @@
     "postinstall": "prisma generate",
     "lint": "next lint",
     "start": "next start",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "lint:eslint": "eslint src/**/*.js --config .eslintrc.cjs",
+    "lint:prettier": "prettier --check src/**/*.ts",
+    "lint:prettier-fix": "yarn lint:prettier --write .",
+    "lint:eslint-fix": "eslint --fix src/**/*.js --config .eslintrc.cjs",
+    "test:editorconfig": "editorconfig-checker --exclude '.git|.husky|node_modules'",
+    "lint-staged": "lint-staged"
   },
   "dependencies": {
     "@next-auth/prisma-adapter": "^1.0.5",
@@ -18,7 +24,6 @@
     "@trpc/next": "^10.18.0",
     "@trpc/react-query": "^10.18.0",
     "@trpc/server": "^10.18.0",
-    "husky": "^8.0.3",
     "lint-staged": "^13.2.1",
     "next": "^13.2.4",
     "next-auth": "^4.21.0",
@@ -48,12 +53,5 @@
   },
   "ct3aMetadata": {
     "initVersion": "7.12.0"
-  },
-  "lint-staged": {
-    "*.{js, jsx, ts, tsx, md, html}": [
-      "yarn lint:prettier-fix",
-      "yarn lint:eslint-fix",
-      "git add -A ."
-    ]
   }
 }
