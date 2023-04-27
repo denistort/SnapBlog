@@ -8,19 +8,21 @@ import { IoReorderThreeOutline } from "react-icons/io5";
 const Header: FC<HeaderProps> = (props) => {
   return (
     <header
-      className="flex h-20 w-full flex-row items-center justify-between border-b border-gray-200 bg-white px-4"
+      className="fixed left-0 top-0 z-10 flex w-full flex-row items-center justify-between border-b border-gray-200 bg-white px-4 py-2"
       {...props}
     >
       <div className="div">
-        <IoReorderThreeOutline className="cursor-pointer text-4xl text-gray-500"></IoReorderThreeOutline>
+        <button className="">
+          <IoReorderThreeOutline className="cursor-pointer text-4xl text-gray-500"></IoReorderThreeOutline>
+        </button>
       </div>
-      <div className="text-3xl font-bold text-gray-500">SnapBlog</div>
+      <div className="hidden text-3xl font-bold">SnapBlog</div>
       <div className="flex items-center space-x-4">
+        <button className="transtion rounded-full p-2 hover:bg-gray-100 hover:text-gray-800">
+          <BsBell className="cursor-pointer text-2xl text-gray-500" />
+        </button>
         <div>
-          <BsBell className="cursor-pointer text-2xl text-gray-500"></BsBell>
-        </div>
-        <div>
-          <div className="h-5 w-5 rounded-full bg-gray-200"></div>
+          <div className="h-8 w-8 rounded-full bg-gray-200"></div>
         </div>
         <div>
           <button className="flex items-center space-x-3 rounded border border-gray-400 px-4 py-2.5 transition hover:border-gray-800">
